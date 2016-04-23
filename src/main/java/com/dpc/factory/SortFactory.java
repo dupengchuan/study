@@ -1,24 +1,23 @@
 /******************************************************************************
- * @file_name BubleSortTest.java
- * @create_time Apr 23, 2016 1:34:15 PM
- * @package_name：com.dpc.algorithm
+ * @file_name SortFactory.java
+ * @create_time Apr 23, 2016 12:58:05 PM
+ * @package_name：com.dpc.internal
  * @project_name：algorithm
  * Copyright © Beijing Congruence Technology Inc. 2016 
  *                    All Rights Reserved.
  * ****************************************************************************
  */
 
-package com.dpc.algorithm;
+package com.dpc.factory;
 
-import org.junit.Test;
-
-import com.dpc.factory.SortFactory;
-import com.dpc.util.AlgorithmUtil;
+import com.dpc.algorithm.BubleSort;
+import com.dpc.algorithm.LinkedListInsertSort;
+import com.dpc.algorithm.Sort;
 
 /******************************************************************************
  * @function：
  * @author kevin
- * @date Apr 23, 2016 1:34:15 PM
+ * @date Apr 23, 2016 12:58:05 PM
  * @version 1.1
  * email:dupengchuan@gmail.com
  * ****************************************************************************
@@ -26,9 +25,14 @@ import com.dpc.util.AlgorithmUtil;
  * 
  * ****************************************************************************
  */
-public class BubleSortTest {
-    @Test
-    public void testSortIntArray(){
-      SortFactory.getBubleSort().sort(AlgorithmUtil.getRandomIntArray(4096));
-    }
+public class SortFactory {
+  
+  public static Sort getBubleSort(){
+    return new BubleSort();
+  }
+  
+  public static Sort getLinkedListInsertSort(){
+    return new LinkedListInsertSort();
+  }
+
 }

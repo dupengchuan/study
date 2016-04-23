@@ -39,5 +39,33 @@ public class AlgorithmUtil {
 
     return res;
   }
+  
+  /**
+   * ASC int array ,the begin is 0
+   * @param len
+   * @return
+   */
+  public static int[] getAscIntArray(int len){
+    int[] res = new int[len];
+    for(int i = 0; i < len; i++){
+      res[i] = i;
+    }
+    
+    return res;
+  }
 
+  /**
+   * 
+   * @param len
+   * @return int array desc
+   */
+  public static int[] getDescIntArray(int len){
+    int[] res = new int[len];
+    int temp = len - 1;
+    for(int i = 0; i < len; i++){
+      res[i] = temp - i;
+    }
+    
+    return res;
+  }
 }
