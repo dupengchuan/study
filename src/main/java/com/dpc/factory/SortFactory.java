@@ -10,6 +10,7 @@
 
 package com.dpc.factory;
 
+import com.dpc.algorithm.ArrayListInsertSort;
 import com.dpc.algorithm.BubleSort;
 import com.dpc.algorithm.LinkedListInsertSort;
 import com.dpc.algorithm.Sort;
@@ -31,8 +32,14 @@ public class SortFactory {
     return new BubleSort();
   }
   
-  public static Sort getLinkedListInsertSort(){
-    return new LinkedListInsertSort();
+  public static Sort getInsertSort(int type){
+    if(type == 0){
+      return new LinkedListInsertSort();
+    }
+    if(type == 1){
+      return new ArrayListInsertSort();
+    }
+    return null;
   }
 
 }

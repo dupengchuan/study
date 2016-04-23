@@ -14,7 +14,6 @@ import org.junit.Test;
 
 import com.dpc.factory.SortFactory;
 import com.dpc.util.AlgorithmUtil;
-import com.dpc.util.PrintUtil;
 
 /******************************************************************************
  * @function：
@@ -30,8 +29,14 @@ import com.dpc.util.PrintUtil;
 public class LinkedListInsertSortTest {
     @Test
     public void testSortIntArray(){
-      int[] data = AlgorithmUtil.getDescIntArray(2048);
-      SortFactory.getLinkedListInsertSort().sort(data);
-      PrintUtil.printIntArray(data);
+      long start = System.currentTimeMillis();
+      int[] data = AlgorithmUtil.getDescIntArray(20048);
+      SortFactory.getInsertSort(0).sort(data);
+      System.out.println("used time: " + (System.currentTimeMillis()-start));
+      
+      start = System.currentTimeMillis();
+      data = AlgorithmUtil.getDescIntArray(20048);
+      SortFactory.getInsertSort(1).sort(data);
+      System.out.println("used time: " + (System.currentTimeMillis()-start));
     }
 }

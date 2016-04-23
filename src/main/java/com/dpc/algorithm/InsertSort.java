@@ -10,6 +10,8 @@
 
 package com.dpc.algorithm;
 
+import java.util.List;
+
 /******************************************************************************
  * @function：
  * @author kevin
@@ -21,38 +23,35 @@ package com.dpc.algorithm;
  * 
  * ****************************************************************************
  */
-public class InsertSort implements Sort {
-
-  /* (non-Javadoc)
-   * @see com.dpc.algorithm.Sort#sort(byte[])
-   */
-  public byte[] sort(byte[] data) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
-  /* (non-Javadoc)
-   * @see com.dpc.algorithm.Sort#sort(short[])
-   */
-  public short[] sort(short[] data) {
-    // TODO Auto-generated method stub
-    return null;
-  }
+public abstract class InsertSort implements Sort{
 
   /* (non-Javadoc)
    * @see com.dpc.algorithm.Sort#sort(int[])
    */
-  public int[] sort(int[] data) {
+  public int[] sort(int[] data, List<Integer> list ) {
     // TODO Auto-generated method stub
-    return null;
+    list.add(data[0]);
+    for(int i = 1; i < data.length; i++){
+      for(Integer e : list){
+        int index = list.indexOf(e);
+        if(data[i] > e){
+          if(index + 1 == list.size()){
+            list.add(index + 1,data[i]);
+            break;
+          }
+          continue;
+        }else{
+          list.add(index,data[i]);
+          break;
+        }
+      }
+    }
+    
+    int i = 0;
+    for(Integer e : list){
+      data[i++] = e;
+    }
+    
+    return data;
   }
-
-  /* (non-Javadoc)
-   * @see com.dpc.algorithm.Sort#sort(long[])
-   */
-  public long[] sort(long[] data) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
 }
