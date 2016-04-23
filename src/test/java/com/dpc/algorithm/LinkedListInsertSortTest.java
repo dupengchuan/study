@@ -10,6 +10,7 @@
 
 package com.dpc.algorithm;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import com.dpc.factory.SortFactory;
@@ -29,14 +30,15 @@ import com.dpc.util.AlgorithmUtil;
 public class LinkedListInsertSortTest {
     @Test
     public void testSortIntArray(){
+      Logger logger = Logger.getLogger(getClass());
       long start = System.currentTimeMillis();
-      int[] data = AlgorithmUtil.getDescIntArray(20048);
+      int[] data = AlgorithmUtil.getDescIntArray(200000);
       SortFactory.getInsertSort(0).sort(data);
-      System.out.println("used time: " + (System.currentTimeMillis()-start));
+      logger.debug("used time: " + (System.currentTimeMillis()-start));
       
       start = System.currentTimeMillis();
-      data = AlgorithmUtil.getDescIntArray(20048);
+      data = AlgorithmUtil.getDescIntArray(200000);
       SortFactory.getInsertSort(1).sort(data);
-      System.out.println("used time: " + (System.currentTimeMillis()-start));
+      logger.debug("used time: " + (System.currentTimeMillis()-start));
     }
 }
