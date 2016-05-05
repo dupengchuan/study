@@ -2,6 +2,9 @@ package dpc.leetcode;
 
 public class Solution12 {
 	
+	private char[] pre = new char[]{'I','X','C','M'};
+	private char[] later = new char[]{'V','L','D'};
+	
 	public String intToRoman(int num) {
         
 		StringBuilder sb = new StringBuilder();
@@ -11,9 +14,6 @@ public class Solution12 {
 		}
 		return sb.toString();
     }
-	
-	private char[] pre = new char[]{'I','X','C','M'};
-	private char[] later = new char[]{'V','L','D'};
 	
 	private StringBuffer getStrBuff(int n, int weight){
 		StringBuffer sb = new StringBuffer();
