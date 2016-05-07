@@ -8,7 +8,7 @@
  * ****************************************************************************
  */
 
-package com.dpc.algorithm;
+package com.dpc.algorithm.inter;
 
 /******************************************************************************
  * @function：
@@ -22,8 +22,7 @@ package com.dpc.algorithm;
  * ****************************************************************************
  */
 public interface Sort {
-    public byte[] sort(byte[] data);
-    public short[] sort(short[] data);
     public int[] sort(int[] data);
-    public long[] sort(long[] data);
+    
+    public String getName();
 }

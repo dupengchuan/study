@@ -1,6 +1,6 @@
 /******************************************************************************
- * @file_name BubleSortTest.java
- * @create_time Apr 23, 2016 1:34:15 PM
+ * @file_name InsertSortTest.java
+ * @create_time Apr 24, 2016 12:51:34 AM
  * @package_name：com.dpc.algorithm
  * @project_name：algorithm
  * Copyright © Beijing Congruence Technology Inc. 2016 
@@ -8,17 +8,18 @@
  * ****************************************************************************
  */
 
-package com.dpc.algorithm;
+package com.dpc.algorithm.internalsort;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 
-import com.dpc.factory.SortFactory;
+import com.dpc.algorithm.internalsort.SortFactory;
 import com.dpc.util.AlgorithmUtil;
 
 /******************************************************************************
  * @function：
  * @author kevin
- * @date Apr 23, 2016 1:34:15 PM
+ * @date Apr 24, 2016 12:51:34 AM
  * @version 1.1
  * email:dupengchuan@gmail.com
  * ****************************************************************************
@@ -26,9 +27,18 @@ import com.dpc.util.AlgorithmUtil;
  * 
  * ****************************************************************************
  */
-public class BubleSortTest {
+public class InsertSortTest {
     @Test
     public void testSortIntArray(){
-      SortFactory.getBubleSort().sort(AlgorithmUtil.getRandomIntArray(4096));
+      Logger logger = Logger.getLogger(getClass());
+      long start = System.currentTimeMillis();
+      int[] data = AlgorithmUtil.getRandomIntArray(200000);
+      SortFactory.getInsertSort().sort(data);
+      logger.debug("used time: " + (System.currentTimeMillis()-start));
+      
+      start = System.currentTimeMillis();
+      data = AlgorithmUtil.getRandomIntArray(200000);
+      SortFactory.getBinaryInsertSort().sort(data);
+      logger.debug("used time: " + (System.currentTimeMillis()-start));
     }
 }

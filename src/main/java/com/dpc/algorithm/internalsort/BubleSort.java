@@ -8,7 +8,10 @@
  * ****************************************************************************
  */
 
-package com.dpc.algorithm;
+package com.dpc.algorithm.internalsort;
+
+import com.dpc.algorithm.inter.Sort;
+import com.dpc.util.AlgorithmName;
 
 /******************************************************************************
  * @function：
@@ -22,22 +25,6 @@ package com.dpc.algorithm;
  * ****************************************************************************
  */
 public class BubleSort implements Sort {
-
-  /* (non-Javadoc)
-   * @see com.dpc.internal.Sort#sort(byte[])
-   */
-  public byte[] sort(byte[] data) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
-  /* (non-Javadoc)
-   * @see com.dpc.internal.Sort#sort(short[])
-   */
-  public short[] sort(short[] data) {
-    // TODO Auto-generated method stub
-    return null;
-  }
 
   /* (non-Javadoc)
    * @see com.dpc.internal.Sort#sort(int[])
@@ -58,12 +45,11 @@ public class BubleSort implements Sort {
     return data;
   }
 
-  /* (non-Javadoc)
-   * @see com.dpc.internal.Sort#sort(long[])
-   */
-  public long[] sort(long[] data) {
-    // TODO Auto-generated method stub
-    return null;
-  }
-
+/* (non-Javadoc)
+ * @see com.dpc.algorithm.inter.Sort#getName()
+ */
+public String getName() {
+	// TODO Auto-generated method stub
+	return AlgorithmName.BUBLE_SORT;
+}
 }
