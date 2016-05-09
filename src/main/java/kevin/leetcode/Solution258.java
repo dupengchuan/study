@@ -1,6 +1,6 @@
 /******************************************************************************
- * @file_name Solution342.java
- * @create_time Apr 24, 2016 2:46:04 AM
+ * @file_name Solution.java
+ * @create_time Apr 26, 2016 1:22:07 PM
  * @package_name：dpc.leetcode
  * @project_name：leetcode
  * Copyright © Beijing Congruence Technology Inc. 2016 
@@ -8,12 +8,12 @@
  * ****************************************************************************
  */
 
-package dpc.leetcode;
+package kevin.leetcode;
 
 /******************************************************************************
  * @function：
  * @author kevin
- * @date Apr 24, 2016 2:46:04 AM
+ * @date Apr 26, 2016 1:22:07 PM
  * @version 1.1
  * email:dupengchuan@gmail.com
  * ****************************************************************************
@@ -21,40 +21,25 @@ package dpc.leetcode;
  * 
  * ****************************************************************************
  */
-public class Solution342 {
-  
-  public boolean isPowerOfFour(int num) {
-    if(num < 1){
-      return false;
-    }
-    
-    int count0 = 0;
-    int count1 = 0;
-    for(int i = 0; i < 32; i++){
-      count1 += (num >> i)&0x01;
-      if(count1 == 0){
-        count0++;
+public class Solution258 {
+  public int addDigits(int num) {
+    String str;
+    while((str=Integer.toString(num)).length() != 1){
+      num = 0;
+      for(int i = 0; i < str.length(); i++){
+        num += str.charAt(i) - '0';
       }
     }
-    if(count1 != 1 || count0 % 2 != 0){
-      return false;
-    }else{
-      return true;
-    }
+    return str.charAt(0) - '0';
   }
   /**
    * @param args
    */
   public static void main(String[] args) {
     // TODO Auto-generated method stub
-    Solution342 sollution = new Solution342();
-  
-    int i = 16;
-    System.out.println(sollution.isPowerOfFour(i));
+    Solution258 solution = new Solution258();
+    System.out.println(solution.addDigits(38));
+    System.out.println(solution.addDigits(2));
     
-    i = 1;
-    System.out.println(sollution.isPowerOfFour(i));
-  
   }
-
 }

@@ -2,7 +2,7 @@
  * @createtime: May 8, 2016 3:16:15 PM
  * @owner: kevin
  */
-package dpc.leetcode;
+package kevin.leetcode;
 
 /**
  * @author kevin

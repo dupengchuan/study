@@ -2,10 +2,9 @@
  * @createtime: May 8, 2016 10:02:29 PM
  * @owner: kevin
  */
-package dpc.leetcode;
+package kevin.leetcode;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -15,14 +14,35 @@ import java.util.List;
 public class Solution78 {
 	public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
+
+        this.quickSort(nums, 0, nums.length-1);
         if(nums.length != 0){
         	this.subsets(res,nums,nums.length-1);
         }
-        for(int i = 0; i < res.size(); i++){
-        	res.get(i).sort(new Compares());
-        }
         return res;
     }
+	
+	private void quickSort(int[] data, int p, int r){
+		if(p < r){
+			int mid = partition(data,p,r);
+			quickSort(data,p,mid - 1);
+			quickSort(data,mid+1,r);
+		}
+	}
+	
+	private int partition(int[] data, int p, int r){
+		int i = p;
+		while(p<=r){
+			if(data[p] <= data[r]){
+				int temp = data[i];
+				data[i] = data[p];
+				data[p] = temp;
+				i++;
+			}
+			p++;
+		}
+		return i - 1;
+	}
 	
 	private void subsets(List<List<Integer>> res,int[] nums,int n){
 		if(n == 0){
@@ -49,10 +69,5 @@ public class Solution78 {
 		int[] data = new int[]{0};
 		Solution78 solution = new Solution78();
 		solution.subsets(data);
-	}
-}
-class Compares implements Comparator<Integer>{
-	public int compare(Integer a, Integer b){
-		return a - b;
 	}
 }

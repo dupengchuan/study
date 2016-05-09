@@ -1,4 +1,4 @@
-package dpc.leetcode;
+package kevin.leetcode;
 
 public class Solution12 {
 	

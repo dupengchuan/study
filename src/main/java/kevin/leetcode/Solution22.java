@@ -2,7 +2,7 @@
  * @createtime: May 8, 2016 11:25:13 AM
  * @owner: kevin
  */
-package dpc.leetcode;
+package kevin.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;

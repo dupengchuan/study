@@ -8,7 +8,7 @@
  * ****************************************************************************
  */
 
-package dpc.leetcode;
+package kevin.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,15 +55,5 @@ public class Solution257 {
   public static void main(String[] args) {
     // TODO Auto-generated method stub
     
-  }
-
-}
-
-class TreeNode{
-  int val;
-  TreeNode left;
-  TreeNode right;
-  TreeNode(int x){
-    this.val = x;
   }
 }
