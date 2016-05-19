@@ -12,9 +12,21 @@ public class Structor {
 
 }
 
+class ListNode {
+	int val;
+	ListNode next;
+	ListNode(int val){this.val = val;}
+}
+
 class TreeNode{
 	int val;
 	TreeNode left;
 	TreeNode right;
 	TreeNode(int val){this.val = val;}
+}
+
+class RandomListNode {
+	int label;
+	RandomListNode next,random;
+	RandomListNode(int label){this.label = label;}
 }
