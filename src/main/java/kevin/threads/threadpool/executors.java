@@ -10,6 +10,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.LockSupport;
 
 /**
  * @author root
@@ -20,13 +21,18 @@ public class executors {
 
 	static class Run implements Runnable{
 		public void run(){
-			System.out.println(Thread.currentThread().getId() + ": " + 
-					System.currentTimeMillis());
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			while(true){
+				//System.out.println(Thread.currentThread().getId() + ": " + 
+				//		System.currentTimeMillis());
+				//Thread.currentThread().suspend();
+				LockSupport.park();
+				System.out.println("ok");
+//				try {
+//					//Thread.sleep(10000);
+//				} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
 			}
 		}
 	}
@@ -51,7 +57,7 @@ public class executors {
 		}
 		
 		ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(1);
-		scheduledExecutorService.scheduleAtFixedRate(new SecondsCount(), 0, 1, TimeUnit.SECONDS);
+		//scheduledExecutorService.scheduleAtFixedRate(new SecondsCount(), 0, 1, TimeUnit.SECONDS);
 	}
 
 }

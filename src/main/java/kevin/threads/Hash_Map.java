@@ -7,6 +7,8 @@
 package kevin.threads;
 
 import java.util.HashMap;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author root
@@ -48,6 +50,7 @@ class PutThread implements Runnable{
 		for(int i = start; i < 1000; i += 2){
 			map.put(i, Integer.toBinaryString(i));
 		}
+		ThreadLocal p;
 	}
 	
 	public static void printSize(){
